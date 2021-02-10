@@ -35,11 +35,13 @@ public class BakeryController {
         if (regionName != null) {
             // If region name has been passed in...
 
+            //List<Bakery> allBakeries = bakeryRepository.findByRegionIgnoreCase(Region.valueOf(cappedRegion));
+
             // Convert whole string to lower case...
             String cappedRegion = regionName.toLowerCase();
             // and then capitalise the first letter of the string:
             cappedRegion = cappedRegion.substring(0, 1).toUpperCase() + cappedRegion.substring(1);
-            //List<Bakery> allBakeries = bakeryRepository.findByRegionIgnoreCase(Region.valueOf(cappedRegion));
+
             List<Bakery> allBakeries = bakeryRepository.findByRegion(Region.valueOf(cappedRegion));
             return new ResponseEntity<>(allBakeries, HttpStatus.OK);
         }
