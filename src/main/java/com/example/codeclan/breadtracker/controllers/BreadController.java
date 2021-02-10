@@ -22,18 +22,24 @@ public class BreadController {
     // GET ALL Breads for a particular year
     @GetMapping(value = "/breads")
     public ResponseEntity<List<Bread>> getAllBreads(
-            @RequestParam(name="year", required = false) Integer year
+            @RequestParam(name="year", required = false) Integer year,
+            @RequestParam(name="age", required = false) Integer age,
+            @RequestParam(name="bakery", required = false) String bakeryName
     ) {
 
-        if( year != null ) {
+        if ( year != null ) {
             List<Bread> allBreads = breadRepository.findByYear(year);
+            return new ResponseEntity<>(allBreads, HttpStatus.OK);
+        }
+
+        // E.g, http://localhost:8080/breads/?age=1&bakery=Talisker
+        if ( age != null && bakeryName != null ) {
+            List<Bread> allBreads = breadRepository.findByAgeAndBakeryName(age, bakeryName);
             return new ResponseEntity<>(allBreads, HttpStatus.OK);
         }
 
         List<Bread> allBreads = breadRepository.findAll();
         return new ResponseEntity<>(allBreads, HttpStatus.OK);
     }
-
-
 
 }

@@ -2,6 +2,7 @@ package com.example.codeclan.breadtracker.controllers;
 
 import com.example.codeclan.breadtracker.helpers.Region;
 import com.example.codeclan.breadtracker.models.Bakery;
+import com.example.codeclan.breadtracker.models.Bread;
 import com.example.codeclan.breadtracker.repositories.BakeryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

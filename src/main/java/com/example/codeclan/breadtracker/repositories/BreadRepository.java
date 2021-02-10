@@ -13,4 +13,6 @@ public interface BreadRepository extends JpaRepository<Bread, Long> {
 
     List<Bread> findByYear(int year);
 
+    List<Bread> findByAgeAndBakeryName(int age, String bakeryName);
+
 }
