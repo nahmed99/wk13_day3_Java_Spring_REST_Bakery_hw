@@ -19,11 +19,11 @@ public class DataLoader implements ApplicationRunner {
     public DataLoader() {
     }
     public void run(ApplicationArguments args) {
-        Bakery bakery1 = new Bakery("Glendronach", Region.Highlands;
+        Bakery bakery1 = new Bakery("Glendronach", Region.Highlands);
         bakeryRepository.save(bakery1);
         Bread bread1 = new Bread("The Glendronach Revival", 15, 2018, bakery1);
         breadRepository.save(bread1);
-        Bakery bakery2 = new Bakery("Rosebank", Region.Lowlands;
+        Bakery bakery2 = new Bakery("Rosebank", Region.Lowlands);
         bakeryRepository.save(bakery2);
         Bread bread2 = new Bread("The Rosebank 12 - Flora and Fona", 12, 1991, bakery2);
         breadRepository.save(bread2);
