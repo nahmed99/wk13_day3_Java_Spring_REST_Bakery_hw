@@ -20,6 +20,7 @@ public class BreadController {
 
     // REST GET all breads
     // GET ALL Breads for a particular year
+    // GET All breads of a particular age AND from a specific bakery (breads/?age=num&bakery=bakery_name)
     @GetMapping(value = "/breads")
     public ResponseEntity<List<Bread>> getAllBreads(
             @RequestParam(name="year", required = false) Integer year,
